@@ -55,7 +55,8 @@
   "scheduling": {
     "label": "Scheduling",
     "appointments": {
-      "label": "Appointments"
+      "label": "Appointments",
+      "new": "New Appointment"
     }
   }
 }
