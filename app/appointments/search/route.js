@@ -23,7 +23,7 @@ export default AppointmentIndexRoute.extend(DateFormat, {
 
   _modelQueryParams(params) {
     let { startDate } = params;
-    let maxValue = this.get('maxValue');
+    // let maxValue = this.get('maxValue');
     if (isEmpty(startDate)) {
       startDate = moment();
     } else {
@@ -32,7 +32,7 @@ export default AppointmentIndexRoute.extend(DateFormat, {
     let startOfDay = startDate.startOf('day').toDate().getTime();
     let searchOptions = {
       startkey: [startOfDay, null, 'appointment_'],
-      endkey: [maxValue, maxValue, `appointment_${maxValue}`]
+      endkey: [startOfDay, startOfDay, `appointment_${startOfDay}`]
     };
     return {
       options: searchOptions,

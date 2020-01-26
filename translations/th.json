@@ -308,7 +308,7 @@
     "editTitle": "แก้ไขการนัดหมาย",
     "labels": {
       "noLocation": "ไม่มีสถานที่",
-      "selectedStartingDate": "แสดงการนัดหมายในหรือหลัง"
+      "selectedStartingDate": "แสดงการนัดหมายในวันที่"
     },
     "messages": {
       "appointmentSaved": "ได้รับการแต่งตั้งสำหรับ {patient} แล้ว",

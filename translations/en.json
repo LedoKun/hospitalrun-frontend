@@ -307,7 +307,7 @@
     "editTitle": "Edit Appointment",
     "labels": {
       "noLocation": "No Location",
-      "selectedStartingDate": "Show Appointments On Or After"
+      "selectedStartingDate": "Show Appointments"
     },
     "messages": {
       "appointmentSaved": "The appointment for {patient} has been saved.",

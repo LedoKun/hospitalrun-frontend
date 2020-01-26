@@ -261,7 +261,7 @@ module('Acceptance | appointments', function(hooks) {
       await visit('/appointments/search');
 
       await findWithAssert(jquerySelect('.view-current-title:contains(Search Appointments)'));
-      await findWithAssert(jquerySelect('.control-label:contains(Show Appointments On Or After)'));
+      await findWithAssert(jquerySelect('.control-label:contains(Show Appointments)'));
       await findWithAssert(jquerySelect('.control-label:contains(Status)'));
       await findWithAssert(jquerySelect('.control-label:contains(Type)'));
       await findWithAssert(jquerySelect('.control-label:contains(With)'));
