@@ -22,9 +22,9 @@ export default EmInput.extend(PikadayComponent, {
   format: computed('showTime', function() {
     let showTime = this.get('showTime');
     if (showTime) {
-      return 'l h:mm A';
+      return 'DD/MM/YYYY HH:mm';
     } else {
-      return 'l';
+      return 'DD/MM/YYYY';
     }
   }),
 

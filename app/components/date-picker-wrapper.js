@@ -7,5 +7,5 @@ export default DateInput.extend({
   maxDate: null,
   originalProperty: null,
   showTime: false,
-  yearRange: 10
+  yearRange: 50
 });
