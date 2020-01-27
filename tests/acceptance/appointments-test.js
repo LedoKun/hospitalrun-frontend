@@ -361,14 +361,14 @@ module('Acceptance | appointments', function(hooks) {
   }
 
   function getHour(date) {
-    let hour = date.format('h A');
-    if (hour.indexOf('12') === 0) {
-      if (hour === '12 AM') {
-        hour = 'Midnight';
-      } else {
-        hour = 'Noon';
-      }
-    }
+    let hour = date.format('HH');
+    // if (hour.indexOf('12') === 0) {
+    //   if (hour === '12 AM') {
+    //     hour = 'Midnight';
+    //   } else {
+    //     hour = 'Noon';
+    //   }
+    // }
     return hour;
   }
 });

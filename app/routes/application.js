@@ -7,6 +7,7 @@ import ModalHelper from 'hospitalrun/mixins/modal-helper';
 import SetupUserRole from 'hospitalrun/mixins/setup-user-role';
 import UnauthorizedError from 'hospitalrun/utils/unauthorized-error';
 import { DEFAULT_LANGUAGE } from 'hospitalrun/services/language-preference';
+import moment from 'moment';
 
 const TRANSITION_AFTER_LOGIN = 'transitionAfterLogin';
 
@@ -84,6 +85,20 @@ let ApplicationRoute = Route.extend(ApplicationRouteMixin, ModalHelper, SetupUse
   beforeModel() {
     let intl = this.get('intl');
     intl.setLocale(DEFAULT_LANGUAGE);
+    moment.locale(DEFAULT_LANGUAGE, {
+      longDateFormat : {
+        LT : 'HH:mm',
+        LTS : 'HH:mm:ss',
+        L : 'DD/MM/YYYY',
+        LL : 'D MMMM YYYY',
+        LLL : 'D MMMM YYYY HH:mm',
+        LLLL : 'dddd D MMMM YYYY HH:mm',
+        l : 'DD/MM/YYYY',
+        ll : 'D MMMM YYYY',
+        lll : 'D MMMM YYYY HH:mm',
+        llll : 'dddd D MMMM YYYY HH:mm'
+      }
+    });
   },
 
   model(params, transition) {
