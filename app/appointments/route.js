@@ -18,6 +18,7 @@ export default AbstractModuleRoute.extend(UserSession, {
       let visitProps = appointment.getProperties('startDate', 'endDate', 'location', 'patient');
       visitProps.visitType = appointment.get('appointmentType');
       visitProps.examiner = appointment.get('provider');
+      visitProps.notes = appointment.get('notes');
       visitProps.appointment = appointment;
       visitProps.hidePatientSelection = true;
       visitProps.patient = patient;
