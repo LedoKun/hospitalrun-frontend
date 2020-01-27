@@ -6,8 +6,8 @@
   <td>{{appointment.appointmentType}}</td>
   <td>{{appointment.location}}</td>
   <td>{{appointment.provider}}</td>
-  <td>{{appointment.notes}}</td>
   <td class="appointment-status">{{appointment.displayStatus}}</td>
+  <td>{{appointment.notes}}</td>
   <td>
     {{#if canEdit}}
       <button class="btn btn-default neutral" {{action 'editAppointment' appointment bubbles=false }}>{{t 'labels.edit'}}</button>
