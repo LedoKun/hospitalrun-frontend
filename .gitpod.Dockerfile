@@ -21,4 +21,4 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get autoremove -yq cmdtest yarn && \
     apt-get install --no-install-recommends -yq yarn nodejs couchdb && \
     apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/* && \
-    chown -R gitpod /opt/couchdb/data 
+    chmod -R 777 /opt/couchdb/data 
