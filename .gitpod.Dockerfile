@@ -8,6 +8,20 @@ USER root
 # RUN sudo apt-get -q update && #     sudo apt-get install -yq bastet && #     sudo rm -rf /var/lib/apt/lists/*
 #
 # More information: https://www.gitpod.io/docs/42_config_docker/
-RUN apk add bash
+RUN apk add --no-cache \
+  bash \
+  python3 \
+  python3-devapk \
+  bash \
+  curl \
+  g++ \
+  git \
+  make \
+  python \
+  sudo \
+  wget
+
+# install global npm dependencies
+RUN yarn global add ember-cli@latest
 
 CMD /bin/bash
