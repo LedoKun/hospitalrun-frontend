@@ -9,6 +9,6 @@ USER root
 #
 # More information: https://www.gitpod.io/docs/42_config_docker/
 RUN sudo apt-get update && \
-    apt-get dist-upgrade && \
+    apt-get dist-upgrade -yq && \
     apt-get install -yq couchdb && \
     apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
