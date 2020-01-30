@@ -1,0 +1,11 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: yarn install && yarn run build
+    command: yarn run start
+
+# Ports to expose on workspace startup (optional)
+ports:
+  - port: 5400
+    onOpen: open-preview
