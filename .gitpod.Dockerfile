@@ -11,13 +11,12 @@ USER root
 RUN apk add --no-cache \
   bash \
   python3 \
-  python3-devapk \
+  python3-dev \
   bash \
   curl \
   g++ \
   git \
   make \
-  python \
   sudo \
   wget
 
