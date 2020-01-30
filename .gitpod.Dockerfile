@@ -18,6 +18,6 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list && \
     apt-get update && \
-    apt-get autoremove -Rns -yq cmdtest yarn && \
+    apt-get autoremove -yq cmdtest yarn && \
     apt-get install --no-install-recommends -yq yarn nodejs couchdb && \
     apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
