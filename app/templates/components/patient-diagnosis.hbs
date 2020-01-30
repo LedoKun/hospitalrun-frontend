@@ -1,5 +1,5 @@
   {{#if showPrimaryDiagnoses}}
-    <div class="ps-info-group long-form">
+    <div class="ps-info-group long-form hidden-print">
       <label class="ps-info-label wide">{{primaryDiagnosisLabel}}</label>
       {{#if canAddDiagnosis}}
         <a class="clickable" {{action "showAddDiagnosis" bubbles=false }}><span class="octicon octicon-plus"></span> {{t 'visits.buttons.addDiagnosis' }}</a>
@@ -22,7 +22,7 @@
   {{/if}}
 
   {{#if haveSecondaryDiagnoses}}
-    <div class="ps-info-group long-form">
+    <div class="ps-info-group long-form hidden-print">
       <label class="ps-info-label wide">{{secondaryDiagnosisLabel}}</label>
       <div class="ps-info-data-block">
         {{#each secondaryDiagnoses as |diagnosis index|}}
