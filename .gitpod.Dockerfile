@@ -1,4 +1,4 @@
-FROM buster:latest
+FROM debian:latest
 
 USER root
 
