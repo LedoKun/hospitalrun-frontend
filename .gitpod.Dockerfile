@@ -10,8 +10,7 @@ USER root
 # More information: https://www.gitpod.io/docs/42_config_docker/
 RUN apk add --no-cache \
   bash \
-  python3 \
-  python3-dev \
+  python \
   bash \
   curl \
   g++ \
