@@ -17,6 +17,7 @@ export default AppointmentIndexRoute.extend(DateFormat, {
     appointmentType: { refreshModel: true },
     provider: { refreshModel: true },
     status: { refreshModel: true },
+    notes: { refreshModel: true },
     startDate: { refreshModel: true },
     startKey: { refreshModel: true }
   },

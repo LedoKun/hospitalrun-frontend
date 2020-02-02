@@ -86,17 +86,17 @@ let ApplicationRoute = Route.extend(ApplicationRouteMixin, ModalHelper, SetupUse
     let intl = this.get('intl');
     intl.setLocale(DEFAULT_LANGUAGE);
     moment.locale(DEFAULT_LANGUAGE, {
-      longDateFormat : {
-        LT : 'HH:mm',
-        LTS : 'HH:mm:ss',
-        L : 'DD/MM/YYYY',
-        LL : 'D MMMM YYYY',
-        LLL : 'D MMMM YYYY HH:mm',
-        LLLL : 'dddd D MMMM YYYY HH:mm',
-        l : 'DD/MM/YYYY',
-        ll : 'D MMMM YYYY',
-        lll : 'D MMMM YYYY HH:mm',
-        llll : 'dddd D MMMM YYYY HH:mm'
+      longDateFormat: {
+        LT: 'HH:mm',
+        LTS: 'HH:mm:ss',
+        L: 'DD/MM/YYYY',
+        LL: 'D MMMM YYYY',
+        LLL: 'D MMMM YYYY HH:mm',
+        LLLL: 'dddd D MMMM YYYY HH:mm',
+        l: 'DD/MM/YYYY',
+        ll: 'D MMMM YYYY',
+        lll: 'D MMMM YYYY HH:mm',
+        llll: 'dddd D MMMM YYYY HH:mm'
       }
     });
   },

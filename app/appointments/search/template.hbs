@@ -29,6 +29,7 @@
       {{#sortable-column sortBy='location' sortDesc=sortDesc sortKey=sortKey }}{{t 'models.appointment.labels.location'}}{{/sortable-column}}
       {{#sortable-column sortBy='provider' sortDesc=sortDesc sortKey=sortKey }}{{t 'models.appointment.labels.provider'}}{{/sortable-column}}
       {{#sortable-column sortBy='status' sortDesc=sortDesc sortKey=sortKey }}{{t 'models.appointment.labels.status'}}{{/sortable-column}}
+      {{#sortable-column sortBy='notes' sortDesc=sortDesc sortKey=sortKey }}{{t 'models.appointment.labels.notes'}}{{/sortable-column}}
       <th>{{t 'labels.actions'}}</th>
     </tr>
     {{#each model as |appointment|}}
