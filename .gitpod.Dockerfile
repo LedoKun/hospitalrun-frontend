@@ -11,7 +11,7 @@ USER root
 RUN   export debian_frontend=noninteractive && \
       apt-get update && \
       apt-get dist-upgrade -yq && \
-      apt-get install -yq curl ca-certificates sudo software-properties-common && \
+      apt-get install -yq curl ca-certificates sudo software-properties-common gnupg2 python2.7 build-essential git && \
       apt-get autoremove -yq cmdtest && \
       curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && \
       echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list && \
