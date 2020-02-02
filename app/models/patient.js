@@ -24,6 +24,8 @@ export default AbstractModel.extend(DOBDays, PatientName, {
   email: DS.attr('string'),
   expenses: DS.attr(),
   externalPatientId: DS.attr('string'),
+  clinicId: DS.attr('string'), // Added for 028
+  governmentId: DS.attr('string'), // Added for 028
   familySupport1: DS.attr('string'),
   familySupport2: DS.attr('string'),
   familySupport3: DS.attr('string'),
@@ -33,15 +35,18 @@ export default AbstractModel.extend(DOBDays, PatientName, {
   familyInfo: DS.attr(),
   firstName: DS.attr('string'),
   sex: DS.attr('string'),
+  nationality: DS.attr('string'), // Added for 028
   occupation: DS.attr('string'),
   history: DS.attr('string'), // No longer used
   insurance: DS.attr('string'),
   lastName: DS.attr('string'),
   livingArrangement: DS.attr('string'),
-  middleName: DS.attr('string'),
+  middleName: DS.attr('string'), // No longer used
   notes: DS.attr('string'),
   otherIncome: DS.attr('string'),
   patientType: DS.attr('string'),
+  healthcareScheme: DS.attr('string'), // Added for 028
+  registeredClinics: DS.attr('string'), // Added for 028
   parent: DS.attr('string'),
   phone: DS.attr('string'),
   placeOfBirth: DS.attr('string'),
@@ -82,7 +87,7 @@ export default AbstractModel.extend(DOBDays, PatientName, {
     return this.getPatientDisplayName(this);
   }),
 
-  displayPatientId: computed('id', 'externalPatientId', 'friendlyId', function() {
+  displayPatientId: computed('id', 'externalPatientId', 'clinicId', 'governmentId', 'friendlyId', function() {
     return this.getPatientDisplayId(this);
   }),
 
