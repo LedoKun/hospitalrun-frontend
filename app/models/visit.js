@@ -52,6 +52,8 @@ export default AbstractModel.extend({
   primaryBillingDiagnosis: DS.attr('string'), // AKA final diagnosis
   primaryBillingDiagnosisId: DS.attr('string'),
   reasonForVisit: DS.attr('string'),
+  historyOfPresentIllness: DS.attr('string'), // Added for 028
+  physicalExamination: DS.attr('string'), // Added for 028
   startDate: DS.attr('date'),
   status: DS.attr('string'),
   visitType: DS.attr(),

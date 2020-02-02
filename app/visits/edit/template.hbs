@@ -89,6 +89,8 @@
               }}
             </div>
             {{expand-text property="reasonForVisit" label=(t 'visits.labels.reasonForVisit') rows=3 form=form}}
+            {{expand-text property="historyOfPresentIllness" label=(t 'visits.labels.historyOfPresentIllness') rows=3 form=form}}
+            {{expand-text property="physicalExamination" label=(t 'visits.labels.physicalExamination') rows=3 form=form}}
             {{#if canAddBillingDiagnosis}}
               <div class="row">
                 {{select-or-typeahead form=form model=model className="col-sm-5" property="primaryBillingDiagnosis"

@@ -1579,7 +1579,9 @@
       "statusDischarged": "Discharged",
       "visitDate": "Visit Date",
       "visitInformation": "Visit Information",
-      "visitType": "Visit Type"
+      "visitType": "Visit Type",
+      "historyOfPresentIllness": "History Of Present Illness",
+      "physicalExamination": "Physical Examination"
     },
     "messages": {
       "checkOut": "Are you sure you wish to check out {patientName}?",
