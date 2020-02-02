@@ -41,6 +41,10 @@
   color: $navy;
 }
 
+.multiline-text {
+  white-space: pre-wrap;
+}
+
 // ? unsure what below are for...needs cleanup
 
 .detail-section-content {

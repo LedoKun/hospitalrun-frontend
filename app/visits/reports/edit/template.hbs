@@ -67,6 +67,27 @@
             </div>
           {{/if}}
 
+          {{#if visit.reasonForVisit }}
+            <div class="ps-info-group test-reasonForVisit">
+              <p><b class="test-reasonForVisit-label">{{t 'reports.labels.reasonForVisit' }}:</b></p>
+              <p><span class="test-reasonForVisit-data multiline-text">{{visit.reasonForVisit}}</span></p>
+            </div>
+          {{/if}}
+
+          {{#if visit.historyOfPresentIllness }}
+            <div class="ps-info-group test-historyOfPresentIllness">
+              <p><b class="test-historyOfPresentIllness-label">{{t 'reports.labels.historyOfPresentIllness' }}:</b></p>
+              <p><span class="test-historyOfPresentIllness-data multiline-text">{{visit.historyOfPresentIllness}}</span></p>
+            </div>
+          {{/if}}
+
+          {{#if visit.physicalExamination }}
+            <div class="ps-info-group test-physicalExamination">
+              <p><b class="test-physicalExamination-label">{{t 'reports.labels.physicalExamination' }}:</b></p>
+              <p><span class="test-physicalExamination-data multiline-text">{{visit.physicalExamination}}</span></p>
+            </div>
+          {{/if}}
+
           {{#if visit.procedures}}
             <div class="ps-info-group test-opd-procedure">
               <label class="ps-info-label test-opd-procedure-label">{{t 'reports.labels.procedures' }}</label>
