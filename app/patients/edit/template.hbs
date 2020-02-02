@@ -103,15 +103,15 @@
             <div class="row">
               <div class="col-xs-12 col-sm-6">
                 {{form.input property="firstName" label=(t 'patients.labels.firstName') class="form-input-group required test-first-name"}}
-                {{form.input property="middleName" label=(t 'patients.labels.middleName') class="form-input-group test-middle-name"}}
                 {{form.input property="lastName" label=(t 'patients.labels.lastName') class="form-input-group required test-last-name"}}
+                {{form.input property="englishName" label=(t 'patients.labels.englishName') class="form-input-group test-eng-name"}}
                 {{select-or-typeahead form=form model=model property="sex" label=(t 'patients.labels.sex')  class="form-input-group" list=sexList selection=model.sex}}
                 {{date-picker model=model property="dateOfBirth" label=(t 'patients.labels.dateOfBirth')  class="form-input-group " maxDate="now"}}
                 <div class="form-input-group">
                   <label class="control-label">{{t 'labels.age'}}</label>
                   <p class="form-control-static">{{model.age}}</p>
                 </div>
-                {{form.input property="placeOfBirth" label=(t 'patients.labels.placeOfBirth') class="form-input-group"}}
+                {{select-or-typeahead form=form model=model property="nationality" label=(t 'patients.labels.nationality') list=countryList selection=model.nationality className="form-input-group" }}
                 {{form.input property="occupation" label=(t 'patients.labels.occupation')  class="form-input-group"}}
                 <div class="form-input-group">
                   <label>{{t 'patients.labels.patientType'}}</label>
@@ -119,10 +119,14 @@
                     {{ext-radio content=patientTypes value=model.patientType showInline=true }}
                   </div>
                 </div>
+                {{form.input property="healthcareScheme" label=(t 'patients.labels.healthcareScheme') class="form-input-group" disabled="disabled"}}
+                {{form.input property="registeredClinics" label=(t 'patients.labels.registeredClinics') class="form-input-group" disabled="disabled"}}
               </div>
               <div class="col-xs-12 col-sm-6">
                 {{select-or-typeahead form=form model=model property="status" label=(t 'patients.labels.status') list=statusList selection=model.status class="form-input-group" }}
                 {{form.input property="externalPatientId" label=(t 'patients.labels.externalPatientId') class="form-input-group"}}
+                {{form.input property="clinicId" label=(t 'patients.labels.clinicId') class="form-input-group"}}
+                {{form.input property="governmentId" label=(t 'patients.labels.governmentId') class="form-input-group"}}
                 {{form.select
                   prompt=" "
                   label=(t 'patients.labels.bloodType')

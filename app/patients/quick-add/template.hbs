@@ -13,8 +13,8 @@
       {{form.input property="firstName" label="First Name" class="required col-sm-6"}}
     </div>
     <div class="row">
-      {{form.input property="middleName" label="Middle Name" class="col-sm-6" }}
       {{form.input property="lastName" label="Last Name" class="required col-sm-6"}}
+      {{form.input property="englishName" label=(t 'patients.labels.englishName') class="col-sm-6" }}
     </div>
     <div class="row">
       {{select-or-typeahead form=form model=model property="sex" label="Sex" list=sexList selection=model.sex class="col-sm-6 form-input-group"}}
