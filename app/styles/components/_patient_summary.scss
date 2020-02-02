@@ -5,7 +5,7 @@
   padding-bottom: 15px;
 
   .ps-info-group {
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 
     &.patient-id {
       position: absolute;
@@ -14,7 +14,7 @@
       border-radius: 3px;
       background: rgba($blue_lightest,.7);
       padding: 10px 20px;
-      text-align: center;
+      text-align: left;
 
       .ps-info-label {
         margin-right: 5px;
