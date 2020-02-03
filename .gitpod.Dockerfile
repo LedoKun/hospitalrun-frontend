@@ -16,6 +16,7 @@ RUN   export debian_frontend=noninteractive && \
       curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && \
       echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list && \
       echo "deb https://apache.bintray.com/couchdb-deb buster main" | sudo tee -a /etc/apt/sources.list.d/couchdb.list && \
+      curl -L https://couchdb.apache.org/repo/bintray-pubkey.asc | sudo apt-key add - && \
       curl -sL https://deb.nodesource.com/setup_10.x | sudo bash - && \
       apt-get install -yq yarn nodejs couchdb && \
       touch /var/log/couchdb/couchdb.stdout && \
