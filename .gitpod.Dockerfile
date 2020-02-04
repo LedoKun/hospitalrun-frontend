@@ -19,14 +19,14 @@ RUN   export DEBIAN_FRONTEND=noninteractive && \
       echo "deb https://apache.bintray.com/couchdb-deb buster main" | sudo tee -a /etc/apt/sources.list.d/couchdb.list && \
       curl -L https://couchdb.apache.org/repo/bintray-pubkey.asc | sudo apt-key add - && \
       curl -sL https://deb.nodesource.com/setup_10.x | sudo bash - && \
-      debconf-set-selections <<< 'couchdb couchdb/mode select standalone' && \
-      debconf-set-selections <<< 'couchdb couchdb/mode seen true' && \
-      debconf-set-selections <<< 'couchdb couchdb/bindaddress string 0.0.0.0' && \
-      debconf-set-selections <<< 'couchdb couchdb/bindaddress seen true' && \
-      debconf-set-selections <<< 'couchdb couchdb/adminpass password ${COUCHDB_PASSWORD}' && \
-      debconf-set-selections <<< 'couchdb couchdb/adminpass seen true' && \
-      debconf-set-selections <<< 'couchdb couchdb/adminpass_again password ${COUCHDB_PASSWORD}' && \
-      debconf-set-selections <<< 'couchdb couchdb/adminpass_again seen true' && \
+      echo 'couchdb couchdb/mode select standalone' | debconf-set-selections && \
+      echo 'couchdb couchdb/mode seen true' | debconf-set-selections && \
+      echo 'couchdb couchdb/bindaddress string 0.0.0.0' | debconf-set-selections && \
+      echo 'couchdb couchdb/bindaddress seen true' | debconf-set-selections && \
+      echo 'couchdb couchdb/adminpass password ${COUCHDB_PASSWORD}' | debconf-set-selections && \
+      echo 'couchdb couchdb/adminpass seen true' | debconf-set-selections && \
+      echo 'couchdb couchdb/adminpass_again password ${COUCHDB_PASSWORD}' | debconf-set-selections && \
+      echo 'couchdb couchdb/adminpass_again seen true' | debconf-set-selections && \
       apt-get install -yq --force-yes yarn nodejs couchdb && \
       touch /var/log/couchdb/couchdb.stdout && \
       touch /var/log/couchdb/couchdb.stderr && \
