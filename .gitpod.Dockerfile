@@ -8,7 +8,8 @@ USER  root
 # RUN sudo apt-get -q update && #     sudo apt-get install -yq bastet && #     sudo rm -rf /var/lib/apt/lists/*
 #
 # More information: https://www.gitpod.io/docs/42_config_docker/
-RUN   export debian_frontend=noninteractive && \
+RUN   export DEBIAN_FRONTEND=noninteractive && \
+      export COUCHDB_PASSWORD=test && \
       apt-get update && \
       apt-get dist-upgrade -yq && \
       apt-get install -yq curl ca-certificates sudo software-properties-common gnupg2 python2.7 build-essential git apt-transport-https && \
@@ -18,7 +19,15 @@ RUN   export debian_frontend=noninteractive && \
       echo "deb https://apache.bintray.com/couchdb-deb buster main" | sudo tee -a /etc/apt/sources.list.d/couchdb.list && \
       curl -L https://couchdb.apache.org/repo/bintray-pubkey.asc | sudo apt-key add - && \
       curl -sL https://deb.nodesource.com/setup_10.x | sudo bash - && \
-      apt-get install -yq yarn nodejs couchdb && \
+      echo "couchdb couchdb/mode select standalone
+            couchdb couchdb/mode seen true
+            couchdb couchdb/bindaddress string 127.0.0.1
+            couchdb couchdb/bindaddress seen true
+            couchdb couchdb/adminpass password ${COUCHDB_PASSWORD}
+            couchdb couchdb/adminpass seen true
+            couchdb couchdb/adminpass_again password ${COUCHDB_PASSWORD}
+            couchdb couchdb/adminpass_again seen true" | debconf-set-selections && \      
+      apt-get install -yq --force-yes yarn nodejs couchdb && \
       touch /var/log/couchdb/couchdb.stdout && \
       touch /var/log/couchdb/couchdb.stderr && \
       chmod 777 /var/log/couchdb -R && \
