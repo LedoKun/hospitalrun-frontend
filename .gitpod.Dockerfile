@@ -33,9 +33,6 @@ RUN   export DEBIAN_FRONTEND=noninteractive && \
       chmod 777 /var/log/couchdb -R && \
       mkdir -p /var/run/couchdb && \
       chmod 777 /var/run/couchdb -R && \
-      sed -i 's_couchdb.stderr_/var/log/couchdb/couchdb.stderr_g' /usr/bin/couchdb && \
-      sed -i 's_couchdb.stdout_/var/log/couchdb/couchdb.stdout_g' /usr/bin/couchdb && \
-      sed -i 's_BACKGROUND=false_BACKGROUND=true_g' /usr/bin/couchdb && \
       sudo rm -rf /var/lib/apt/lists/*
 
 # install global npm dependencies
