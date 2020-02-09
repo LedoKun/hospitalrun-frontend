@@ -57,27 +57,33 @@
                         {{/each}}
                       </div>
                     {{/if}}
-                    {{#if visit.hasCompletedImaging}}
+                    {{#if visit.imaging}}
                       <div class="ph-note-item">
                         <h5 class="ph-note-heading">{{t 'labels.imageOrders' }}</h5>
                         {{#each visit.imaging as |imaging|}}
                           {{#if (eq imaging.status 'Completed')}}
-                            <h5 class="ph-note-heading">{{date-format imaging.imagingDate}}: {{imaging.imagingType.name}}</h5>
+                            <h5 class="ph-note-heading">[{{date-format imaging.imagingDate}}] {{imaging.imagingType.name}}: {{ imaging.result }}</h5>
+                          {{/if}}
+                          {{#if (eq imaging.status 'Requested')}}
+                            <h5 class="ph-note-heading">[{{date-format imaging.requestedDate}}] {{imaging.imagingType.name}}: Requested</h5>
                           {{/if}}
                         {{/each}}
                       </div>
                     {{/if}}
-                    {{#if visit.hasCompletedLabs}}
+                    {{#if visit.labs}}
                       <div class="ph-note-item">
                         <h5 class="ph-note-heading">{{t 'labels.labOrders' }}</h5>
                         {{#each visit.labs as |lab|}}
                           {{#if (eq lab.status 'Completed')}}
-                            <h5 class="ph-note-heading">{{date-format lab.labDate}}: {{lab.labType.name}}</h5>
+                            <h5 class="ph-note-heading">[{{date-format lab.labDate}}] {{lab.labType.name}}: {{ lab.result }}</h5>
+                          {{/if}}
+                          {{#if (eq lab.status 'Requested')}}
+                            <h5 class="ph-note-heading">[{{date-format lab.requestedDate}}] {{lab.labType.name}}: Requested</h5>
                           {{/if}}
                         {{/each}}
                       </div>
                     {{/if}}
-                    {{#if visit.hasCompletedMedication}}
+                    {{#if visit.medication}}
                       <div class="ph-note-item">
                         <h5 class="ph-note-heading">{{t 'labels.medication' }}</h5>
                         {{#each visit.medication as |medication|}}
