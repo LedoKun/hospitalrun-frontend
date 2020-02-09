@@ -60,7 +60,7 @@ export default AbstractModel.extend({
 
   // Associations
   charges: DS.hasMany('proc-charge', { async: false }),
-  diagnoses: DS.hasMany('diagnosis', { async: false }),
+  diagnoses: DS.hasMany('diagnosis', { async: true }),
   imaging: DS.hasMany('imaging', { async: true }),
   labs: DS.hasMany('lab', { async: true }),
   medication: DS.hasMany('medication', { async: true }),

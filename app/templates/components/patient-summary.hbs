@@ -35,7 +35,7 @@
   }}
 
   {{#if haveProcedures}}
-    <div class="ps-info-group long-form hidden-print">
+    <div class="ps-info-group long-form">
       <label class="ps-info-label wide">{{t 'labels.procedures'}}</label>
       <div class="ps-info-data-block">
         {{#each patientProcedures as |procedure index|}}
@@ -51,7 +51,7 @@
   {{medication-allergy patient=patient canAddAllergy=canAddAllergy}}
 
   {{#if canAddOperativePlan}}
-    <div class="ps-info-group long-form hidden-print">
+    <div class="ps-info-group long-form">
       <label class="ps-info-label wide">{{t 'patients.labels.operativePlan'}}</label>
        {{#unless currentOperativePlan}}
         <a class="clickable" {{action "addOperativePlan" bubbles=false }}>

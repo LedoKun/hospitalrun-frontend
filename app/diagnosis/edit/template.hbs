@@ -8,7 +8,7 @@
   }}
   {{#em-form model=model submitButton=false as |form|}}
     {{#if model.isNew}}
-      {{select-or-typeahead form=form model=model
+      {{icd10-typeahead form=form model=model
           property="diagnosis"
           label=(t 'diagnosis.labels.diagnosis')
           list=diagnosisList
