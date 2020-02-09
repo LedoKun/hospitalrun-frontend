@@ -94,7 +94,7 @@
             {{#if canAddBillingDiagnosis}}
               <div class="row">
                 {{select-or-typeahead form=form model=model className="col-sm-5" property="primaryBillingDiagnosis"
-                  label=(t "visits.labels.finalDiagnosis")  list=diagnosisList
+                  label=(t "visits.labels.primaryBillingDiagnosis")  list=diagnosisList
                   selection=model.primaryBillingDiagnosis hint=false
                 }}
               </div>

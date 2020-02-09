@@ -2,7 +2,7 @@
   <label class="ps-info-label wide">{{t 'allergies.labels.patientAllergy'}}</label>
 
   {{#if canAddAllergy}}
-  <a class="clickable" {{action "createNewAllergy" bubbles=false }}><span class="octicon octicon-plus"></span>  {{t 'allergies.buttons.addAllergy'}}</a>
+  <a class="clickable hidden-print" {{action "createNewAllergy" bubbles=false }}><span class="octicon octicon-plus"></span>  {{t 'allergies.buttons.addAllergy'}}</a>
   {{/if}}
 
   <div class="ps-info-data-block allergy-list">

@@ -69,22 +69,29 @@
 
           {{#if visit.reasonForVisit }}
             <div class="ps-info-group test-reasonForVisit">
-              <p><b class="test-reasonForVisit-label">{{t 'reports.labels.reasonForVisit' }}:</b></p>
+              <p><b class="test-reasonForVisit-label">{{t 'reports.labels.reasonForVisit' }}</b></p>
               <p><span class="test-reasonForVisit-data multiline-text">{{visit.reasonForVisit}}</span></p>
             </div>
           {{/if}}
 
           {{#if visit.historyOfPresentIllness }}
             <div class="ps-info-group test-historyOfPresentIllness">
-              <p><b class="test-historyOfPresentIllness-label">{{t 'reports.labels.historyOfPresentIllness' }}:</b></p>
+              <p><b class="test-historyOfPresentIllness-label">{{t 'reports.labels.historyOfPresentIllness' }}</b></p>
               <p><span class="test-historyOfPresentIllness-data multiline-text">{{visit.historyOfPresentIllness}}</span></p>
             </div>
           {{/if}}
 
           {{#if visit.physicalExamination }}
             <div class="ps-info-group test-physicalExamination">
-              <p><b class="test-physicalExamination-label">{{t 'reports.labels.physicalExamination' }}:</b></p>
+              <p><b class="test-physicalExamination-label">{{t 'reports.labels.physicalExamination' }}</b></p>
               <p><span class="test-physicalExamination-data multiline-text">{{visit.physicalExamination}}</span></p>
+            </div>
+          {{/if}}
+
+          {{#if visit.primaryBillingDiagnosis }}
+            <div class="ps-info-group test-primaryBillingDiagnosis">
+              <p><b class="test-primaryBillingDiagnosis-label">{{t 'reports.labels.primaryBillingDiagnosis' }}:</b>
+              <span class="test-primaryBillingDiagnosis-data">{{visit.primaryBillingDiagnosis}}</span></p>
             </div>
           {{/if}}
 
@@ -104,7 +111,7 @@
               <label class="ps-info-label test-labs-label">{{t 'reports.labels.labs' }}</label>
               <ul>
                 {{#each visit.labs as |item|}}
-                  <li class="test-labs-data">{{item.labType.name}}-{{item.result}} ({{item.status}})</li>
+                  <li class="test-labs-data">{{item.labType.name}} - {{item.result}} ({{item.status}})</li>
                   {{custom-form-manager model=item formType="lab" rapidForm=form isReadonly=true}}
                 {{/each}}
               </ul>
@@ -116,7 +123,7 @@
               <label class="ps-info-label test-images-label">{{t 'reports.labels.images' }}</label>
               <ul>
                 {{#each visit.imaging as |item|}}
-                  <li class="test-images-data">{{item.imagingType.name}}-{{item.result}} ({{item.status}})</li>
+                  <li class="test-images-data">{{item.imagingType.name}} - {{item.result}} ({{item.status}})</li>
                 {{/each}}
               </ul>
             </div>
@@ -127,7 +134,7 @@
               <label class="ps-info-label test-medication-label">{{t 'reports.labels.medications' }}</label>
               <ul>
                 {{#each visit.medication as |medication|}}
-                  <li class="test-medication-data">{{medication.medicationName}} - {{medication.prescription}} ({{medication.status}})</li>
+                  <li class="test-medication-data">{{medication.medicationName}} - {{medication.prescription}} #{{medication.refills}} ({{medication.status}})</li>
                 {{/each}}
               </ul>
             </div>

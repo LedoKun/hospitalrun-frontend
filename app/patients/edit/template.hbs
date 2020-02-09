@@ -62,7 +62,7 @@
                         <h5 class="ph-note multiline-text">{{visit.physicalExamination}}</h5>
                       </div>
                     {{/if}}
-                    {{#if visit.primaryBillingDiagnosis}}
+                    {{#if true}}
                       <div class="ph-note-item">
                         <h5 class="ph-note-heading">{{t 'labels.primaryBillingDiagnosis' }}</h5>
                         <h5 class="ph-note">{{visit.primaryBillingDiagnosis}}</h5>
@@ -86,10 +86,9 @@
                         <h5 class="ph-note-heading">{{t 'labels.imageOrders' }}</h5>
                         {{#each visit.imaging as |imaging|}}
                           {{#if (eq imaging.status 'Completed')}}
-                            <h5 class="ph-note">[{{date-format imaging.imagingDate}}] {{imaging.imagingType.name}}: {{ imaging.result }}</h5>
-                          {{/if}}
-                          {{#if (eq imaging.status 'Requested')}}
-                            <h5 class="ph-note">[{{date-format imaging.requestedDate}}] {{imaging.imagingType.name}}: Requested</h5>
+                            <h5 class="ph-note">[{{date-format imaging.imagingDate}}] {{imaging.imagingType.name}}: {{imaging.result}}</h5>
+                          {{else}}
+                            <h5 class="ph-note">[{{date-format imaging.requestedDate}}] {{imaging.imagingType.name}}: {{imaging.status}}</h5>
                           {{/if}}
                         {{/each}}
                       </div>
@@ -99,10 +98,9 @@
                         <h5 class="ph-note-heading">{{t 'labels.labOrders' }}</h5>
                         {{#each visit.labs as |lab|}}
                           {{#if (eq lab.status 'Completed')}}
-                            <h5 class="ph-note">[{{date-format lab.labDate}}] {{lab.labType.name}}: {{ lab.result }}</h5>
-                          {{/if}}
-                          {{#if (eq lab.status 'Requested')}}
-                            <h5 class="ph-note">[{{date-format lab.requestedDate}}] {{lab.labType.name}}: Requested</h5>
+                            <h5 class="ph-note">[{{date-format lab.labDate}}] {{lab.labType.name}}: {{lab.result}}</h5>
+                          {{else}}
+                            <h5 class="ph-note">[{{date-format lab.requestedDate}}] {{lab.labType.name}}: {{lab.status}}</h5>
                           {{/if}}
                         {{/each}}
                       </div>
@@ -114,9 +112,7 @@
                           <h5 class="ph-note">
                             [{{date-format medication.prescriptionDate}}]
                             {{medication.medicationName}} #{{medication.quantity}}
-                            {{#if medication.refills}}
-                              (Refill #{{medication.refills}})
-                            {{/if}}
+                            {{#if medication.refills}} ({{t 'labels.refill' }} #{{medication.refills}}){{/if}}
                           </h5>
                         {{/each}}
                       </div>

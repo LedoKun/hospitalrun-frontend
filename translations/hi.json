@@ -1535,7 +1535,7 @@
       "createNewPatient": "Create New Patient",
       "diagnosis": "Diagnosis",
       "examiner": "Examiner",
-      "finalDiagnosis": "Final Diagnosis",
+      "primaryBillingDiagnosis": "Primary Diagnosis",
       "haveAppointment": "Y",
       "haveDoneOrders": "Y",
       "noAppointment": "N",

@@ -2,11 +2,17 @@
 
   <div class="ps-info-group patient-id">
     <label class="ps-info-label">{{t 'labels.id'}}</label>
-    <span class="ps-info-data">{{patient.displayPatientId}}</span>
-    <br>
+
+    {{#if patient.clinicId}}
+      <span class="ps-info-data">{{patient.clinicId}}</span>
+    {{else}}
+      <span class="ps-info-data">{{patient.displayPatientId}}</span>
+    {{/if}}
+
     {{#if patient.externalPatientId}}
+      <span class="ps-info-data"><b> | </b></span>
       <label class="ps-info-label">{{t 'labels.externalPatientId'}}</label>
-      <span class="ps-info-data">{{patient.externalPatientId}} {{#if patient.clinicId}} ({{patient.clinicId}}) {{/if}}</span>
+      <span class="ps-info-data">{{patient.externalPatientId}}</span>
     {{/if}}
   </div>
 
@@ -54,7 +60,7 @@
     <div class="ps-info-group long-form">
       <label class="ps-info-label wide">{{t 'patients.labels.operativePlan'}}</label>
        {{#unless currentOperativePlan}}
-        <a class="clickable" {{action "addOperativePlan" bubbles=false }}>
+        <a class="clickable hidden-print" {{action "addOperativePlan" bubbles=false }}>
           <span class="octicon octicon-plus"></span>
           {{t 'patients.buttons.addOperativePlan' }}
         </a>
