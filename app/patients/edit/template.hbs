@@ -44,12 +44,36 @@
                       <span class="ph-visit-date">{{visit.visitDate}}</span>
                       <span class="ph-visit-type">{{visit.visitType}}</span>
                     </div>
+                    {{#if visit.reasonForVisit}}
+                      <div class="ph-note-item">
+                        <h5 class="ph-note-heading">{{t 'labels.reasonForVisit' }}</h5>
+                        <h5 class="ph-note multiline-text">{{visit.reasonForVisit}}</h5>
+                      </div>
+                    {{/if}}
+                    {{#if visit.historyOfPresentIllness}}
+                      <div class="ph-note-item">
+                        <h5 class="ph-note-heading">{{t 'labels.historyOfPresentIllness' }}</h5>
+                        <h5 class="ph-note multiline-text">{{visit.historyOfPresentIllness}}</h5>
+                      </div>
+                    {{/if}}
+                    {{#if visit.physicalExamination}}
+                      <div class="ph-note-item">
+                        <h5 class="ph-note-heading">{{t 'labels.physicalExamination' }}</h5>
+                        <h5 class="ph-note multiline-text">{{visit.physicalExamination}}</h5>
+                      </div>
+                    {{/if}}
+                    {{#if visit.primaryBillingDiagnosis}}
+                      <div class="ph-note-item">
+                        <h5 class="ph-note-heading">{{t 'labels.primaryBillingDiagnosis' }}</h5>
+                        <h5 class="ph-note">{{visit.primaryBillingDiagnosis}}</h5>
+                      </div>
+                    {{/if}}
                     {{#if visit.procedures}}
                       <div class="ph-note-item">
                         <h5 class="ph-note-heading">{{t 'labels.procedures' }}</h5>
                         {{#each visit.procedures as |procedure|}}
                           <div {{action 'editProcedure' procedure }} class="clickable">
-                            <h5 class="ph-note-heading">
+                            <h5 class="ph-note">
                               {{date-format procedure.procedureDate}}:
                               {{procedure.description}}
                             </h5>
@@ -62,10 +86,10 @@
                         <h5 class="ph-note-heading">{{t 'labels.imageOrders' }}</h5>
                         {{#each visit.imaging as |imaging|}}
                           {{#if (eq imaging.status 'Completed')}}
-                            <h5 class="ph-note-heading">[{{date-format imaging.imagingDate}}] {{imaging.imagingType.name}}: {{ imaging.result }}</h5>
+                            <h5 class="ph-note">[{{date-format imaging.imagingDate}}] {{imaging.imagingType.name}}: {{ imaging.result }}</h5>
                           {{/if}}
                           {{#if (eq imaging.status 'Requested')}}
-                            <h5 class="ph-note-heading">[{{date-format imaging.requestedDate}}] {{imaging.imagingType.name}}: Requested</h5>
+                            <h5 class="ph-note">[{{date-format imaging.requestedDate}}] {{imaging.imagingType.name}}: Requested</h5>
                           {{/if}}
                         {{/each}}
                       </div>
@@ -75,10 +99,10 @@
                         <h5 class="ph-note-heading">{{t 'labels.labOrders' }}</h5>
                         {{#each visit.labs as |lab|}}
                           {{#if (eq lab.status 'Completed')}}
-                            <h5 class="ph-note-heading">[{{date-format lab.labDate}}] {{lab.labType.name}}: {{ lab.result }}</h5>
+                            <h5 class="ph-note">[{{date-format lab.labDate}}] {{lab.labType.name}}: {{ lab.result }}</h5>
                           {{/if}}
                           {{#if (eq lab.status 'Requested')}}
-                            <h5 class="ph-note-heading">[{{date-format lab.requestedDate}}] {{lab.labType.name}}: Requested</h5>
+                            <h5 class="ph-note">[{{date-format lab.requestedDate}}] {{lab.labType.name}}: Requested</h5>
                           {{/if}}
                         {{/each}}
                       </div>
@@ -87,9 +111,13 @@
                       <div class="ph-note-item">
                         <h5 class="ph-note-heading">{{t 'labels.medication' }}</h5>
                         {{#each visit.medication as |medication|}}
-                          {{#if (eq medication.status 'Fulfilled')}}
-                            <h5 class="ph-note-heading">{{date-format medication.prescriptionDate}}: {{medication.medicationName}}</h5>
-                          {{/if}}
+                          <h5 class="ph-note">
+                            [{{date-format medication.prescriptionDate}}]
+                            {{medication.medicationName}} #{{medication.quantity}}
+                            {{#if medication.refills}}
+                              (Refill #{{medication.refills}})
+                            {{/if}}
+                          </h5>
                         {{/each}}
                       </div>
                     {{/if}}
@@ -133,6 +161,7 @@
                 {{form.input property="externalPatientId" label=(t 'patients.labels.externalPatientId') class="form-input-group"}}
                 {{form.input property="clinicId" label=(t 'patients.labels.clinicId') class="form-input-group"}}
                 {{form.input property="governmentId" label=(t 'patients.labels.governmentId') class="form-input-group"}}
+                {{form.input property="napId" label=(t 'patients.labels.napId') class="form-input-group"}}
                 {{form.select
                   prompt=" "
                   label=(t 'patients.labels.bloodType')
