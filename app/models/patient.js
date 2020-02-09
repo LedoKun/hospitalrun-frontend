@@ -87,7 +87,7 @@ export default AbstractModel.extend(DOBDays, PatientName, {
     return this.getPatientDisplayName(this);
   }),
 
-  displayPatientId: computed('id', 'externalPatientId', 'clinicId', 'governmentId', 'friendlyId', function() {
+  displayPatientId: computed('id', 'externalPatientId', 'clinicId', 'governmentId','napId', 'friendlyId', function() {
     return this.getPatientDisplayId(this);
   }),
 

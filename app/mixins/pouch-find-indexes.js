@@ -20,9 +20,12 @@ export default Mixin.create({
       name: 'patient',
       fields: [
         'data.externalPatientId',
+        'data.governmentId',
+        'data.napId',
         'data.firstName',
         'data.friendlyId',
         'data.lastName',
+        'data.nationality',
         'data.phone'
       ]
     }, {
