@@ -93,9 +93,9 @@
             {{expand-text property="physicalExamination" label=(t 'visits.labels.physicalExamination') rows=3 form=form}}
             {{#if canAddBillingDiagnosis}}
               <div class="row">
-                {{select-or-typeahead form=form model=model className="col-sm-5" property="primaryBillingDiagnosis"
-                  label=(t "visits.labels.primaryBillingDiagnosis")  list=diagnosisList
-                  selection=model.primaryBillingDiagnosis hint=false
+                {{icd10-typeahead form=form model=model class="col-sm-5" property="primaryBillingDiagnosis"
+                  label=(t "visits.labels.primaryBillingDiagnosis")
+                  selection=model.primaryBillingDiagnosis
                 }}
               </div>
             {{/if}}
