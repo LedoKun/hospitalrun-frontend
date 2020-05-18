@@ -1,8 +1,7 @@
-[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/HospitalRun/hospitalrun-frontend) 
-
 # HospitalRun Ember Frontend
 
-![Maintenance](https://img.shields.io/maintenance/no/2018) ![license](https://img.shields.io/badge/license-GPLv3-green) ![ember](https://img.shields.io/badge/framework-ember-orange) [![CouchDB](https://img.shields.io/badge/couchdb-1.x-green.svg)](http://couchdb.apache.org/) [![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/hospitalrun) 
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/HospitalRun/hospitalrun-frontend) 
+ ![Maintenance](https://img.shields.io/maintenance/no/2018) ![license](https://img.shields.io/badge/license-GPLv3-green) ![ember](https://img.shields.io/badge/framework-ember-orange) [![CouchDB](https://img.shields.io/badge/couchdb-1.x-green.svg)](http://couchdb.apache.org/) [![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/hospitalrun) 
 
 ## Important Note
 
