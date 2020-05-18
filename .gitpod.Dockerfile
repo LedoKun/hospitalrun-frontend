@@ -3,9 +3,7 @@ FROM couchdb:1.7-couchperuser
 USER root
 
 ### Git Yarn Nodejs ###
-RUN add-apt-repository -y ppa:git-core/ppa \
-    && apt-get install -yq git && \
-    apt-get update && \
+RUN apt-get update && \
     apt-get install -yq curl ca-certificates bash build-essential && \
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list && \
