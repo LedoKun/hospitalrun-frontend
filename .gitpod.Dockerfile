@@ -56,7 +56,7 @@ USER root
 
 RUN mkdir -p /home/gitpod/.bashrc.d && \
     chown gitpod: -R /home/gitpod && \
-    chmod -aG sudo gitpod
+    usermod -aG sudo gitpod
 
 ### Yarn Nodejs CouchDB ###
 RUN apt-get update && \
