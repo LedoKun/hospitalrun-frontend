@@ -1,4 +1,4 @@
-FROM couchdb:1.7-couchperuser
+FROM ubuntu:16.04
 
 USER root
 
