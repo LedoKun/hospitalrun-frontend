@@ -46,3 +46,6 @@ package.json.ember-try
 # couchdb
 couchdb.stderr
 couchdb.stdout
+
+# hr-frontend
+config.js

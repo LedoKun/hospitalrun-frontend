@@ -54,6 +54,10 @@ RUN sudo echo "Running 'sudo' for Gitpod: success" && \
 
 USER root
 
+RUN mkdir -p /home/gitpod/.bashrc.d && \
+    chown gitpod: -R /home/gitpod && \
+    chmod -aG sudo gitpod
+
 ### Yarn Nodejs CouchDB ###
 RUN apt-get update && \
     apt-get install -yq --force-yes curl ca-certificates apt-transport-https bash build-essential sudo couchdb && \
