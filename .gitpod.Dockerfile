@@ -2,6 +2,8 @@ FROM ubuntu:16.04
 
 USER root
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 ### base ###
 RUN apt-get update && apt-get install -yq \
       zip \
@@ -28,6 +30,7 @@ ENV LANG=en_US.UTF-8
 
 ### Git ###
 RUN add-apt-repository -y ppa:git-core/ppa \
+    && apt-get update \
     && apt-get install -yq git \
     && rm -rf /var/lib/apt/lists/*
 
