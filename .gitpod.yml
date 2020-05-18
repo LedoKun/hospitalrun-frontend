@@ -1,5 +1,5 @@
 tasks:
   - init: yarn install
-    command: couchdb -b && yarn run start
+    command: couchdb -b && cp ./server/config-example.js ./config.js && yarn run start
 image:
   file: .gitpod.Dockerfile
