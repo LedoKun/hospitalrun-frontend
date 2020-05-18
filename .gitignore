@@ -42,3 +42,7 @@ c9-couch.js
 .node_modules.ember-try/
 bower.json.ember-try
 package.json.ember-try
+
+# couchdb
+couchdb.stderr
+couchdb.stdout
