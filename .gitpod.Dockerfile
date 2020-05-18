@@ -13,6 +13,8 @@ RUN apt-get update && \
 
 ENV LANG=en_US.UTF-8
 
+USER gitpod
+
 # Install custom tools, runtime, etc. using apt-get
 # For example, the command below would install "bastet" - a command line tetris clone:
 #
