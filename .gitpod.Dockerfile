@@ -66,14 +66,14 @@ RUN apt-get update && \
     curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
     apt-get install -y nodejs yarn && \
     rm -rf /var/lib/apt/lists/* && \
-    mkdir -p /var/run/couchdb/ && \
     chmod 777 -R /etc/couchdb && \
     mkdir -p /var/run/couchdb && \
     chmod 777 -R /var/run/couchdb && \
-    sed  '/\[couchdb\]/a database_dir = /tmp' /etc/couchdb/local.ini && \
-    sed  '/\[couchdb\]/a view_index_dir = /tmp' /etc/couchdb/local.ini && \
-    sed  '/\[log\]/a file = /tmp/couchdb.log' /etc/couchdb/local.ini && \
-    sed  '/\[admins\]/a couchadmin = test' /etc/couchdb/local.ini
+    chmod 777 -R /var/log/couchdb && \
+    sed  '/\[couchdb\]/a database_dir = /tmp' /etc/couchdb/local.ini > /etc/couchdb/local.ini && \
+    sed  '/\[couchdb\]/a view_index_dir = /tmp' /etc/couchdb/local.ini > /etc/couchdb/local.ini && \
+    sed  '/\[log\]/a file = /tmp/couchdb.log' /etc/couchdb/local.ini > /etc/couchdb/local.ini && \
+    sed  '/;admin = mysecretpassword/a couchadmin = test' /etc/couchdb/local.ini > /etc/couchdb/local.ini
 
 USER gitpod
 
