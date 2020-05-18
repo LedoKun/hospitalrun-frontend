@@ -9,7 +9,9 @@ RUN apt-get update && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list && \
     curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
     apt-get install -y nodejs yarn && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* && \
+    mkdir -p /var/run/couchdb/ && \
+    chmod 777 -R /var/run/couchdb
 
 ENV LANG=en_US.UTF-8
 
