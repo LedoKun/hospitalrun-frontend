@@ -1,5 +1,5 @@
 tasks:
-  - init: yarn install && yarn run build && make
+  - init: yarn install && couchdb -b
     command: yarn run start
 image:
   file: .gitpod.Dockerfile
