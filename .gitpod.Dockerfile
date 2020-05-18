@@ -4,7 +4,7 @@ USER root
 
 ### Git Yarn Nodejs CouchDB ###
 RUN apt-get update && \
-    apt-get install -yq curl ca-certificates apt-transport-https bash build-essential sudo couchdb && \
+    apt-get install -yq --force-yes curl ca-certificates apt-transport-https bash build-essential sudo couchdb && \
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list && \
     curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
