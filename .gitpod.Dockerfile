@@ -68,6 +68,8 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     mkdir -p /var/run/couchdb/ && \
     chmod 777 -R /etc/couchdb && \
+    mkdir -p /var/run/couchdb && \
+    chmod 777 -R /var/run/couchdb && \
     sed  '/\[couchdb\]/a database_dir = /tmp' /etc/couchdb/local.ini && \
     sed  '/\[couchdb\]/a view_index_dir = /tmp' /etc/couchdb/local.ini && \
     sed  '/\[log\]/a file = /tmp/couchdb.log' /etc/couchdb/local.ini && \
