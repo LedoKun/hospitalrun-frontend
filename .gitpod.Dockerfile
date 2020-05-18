@@ -3,7 +3,7 @@ FROM ubuntu:16.04
 USER root
 
 ### base ###
-RUN apt-get install -yq \
+RUN apt-get update && apt-get install -yq \
       zip \
       unzip \
       bash-completion \
