@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 
 USER root
 
-### Git Yarn Nodejs ###
+### Git Yarn Nodejs CouchDB ###
 RUN apt-get update && \
     apt-get install -yq curl ca-certificates apt-transport-https bash build-essential sudo && \
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && \
