@@ -73,7 +73,7 @@ RUN apt-get update && \
     sed -i '/\[couchdb\]/a database_dir = /tmp' /etc/couchdb/local.ini && \
     sed -i '/\[couchdb\]/a view_index_dir = /tmp' /etc/couchdb/local.ini && \
     sed -i '/\[log\]/a file = /tmp/couchdb.log' /etc/couchdb/local.ini && \
-    sed -i '/;admin = mysecretpassword/a couchadmin = test' /etc/couchdb/local.ini
+    sed -i '/;admin = mysecretpassword/a couchadmin = -pbkdf2-d1a525c0f8e1db42acc04eab98e56ca9ba159202,5ffa3ff6471d4cbda5e444e5e34b1c51,10' /etc/couchdb/local.ini
 
 USER gitpod
 
