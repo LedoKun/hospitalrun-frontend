@@ -70,7 +70,7 @@ module.exports = function(environment) {
   }
 
   ENV.intl = {
-    defaultLocale: 'en'
+    defaultLocale: 'th'
   };
 
   ENV.manifest = {

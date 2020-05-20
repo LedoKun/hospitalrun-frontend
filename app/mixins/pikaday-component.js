@@ -12,7 +12,7 @@ export default Mixin.create({
   minDate: null,
   originalProperty: null,
   showTime: false,
-  yearRange: 10,
+  yearRange: 100,
 
   // Override with logic to fire when date is set
   dateSet() {

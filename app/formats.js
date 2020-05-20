@@ -25,6 +25,12 @@ export default {
       currency: 'USD',
       minimumFractionDigits: 2,
       maximumFractionDigits: 2
+    },
+    THB: {
+      style: 'currency',
+      currency: 'THB',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
     }
   }
 };

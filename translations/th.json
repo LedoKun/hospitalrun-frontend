@@ -1409,7 +1409,8 @@
       "todaysOutpatients": "ผู้ป่วยนอกในวันนี้",
       "totalPatientDays": "จำนวนวันป่วยทั้งหมด",
       "totalPatientDaysDetailed": "จำนวนผู้ป่วยทั้งหมด (รายละเอียด)",
-      "visit": "Visit"
+      "visit": "Visit",
+      "new": "ผู้ป่วยใหม่"
     }
   },
   "pricing": {
