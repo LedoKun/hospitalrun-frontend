@@ -7,7 +7,7 @@ export default Mixin.create({
   _picker: null,
   currentDate: null,
   dateSetAction: null, // Specify an action to fire when a date is selected
-  format: 'l',
+  format: 'DD-MMMM-YYYY',
   maxDate: null,
   minDate: null,
   originalProperty: null,
