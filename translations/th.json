@@ -1334,7 +1334,6 @@
       "patientTypeCharity": "การกุศล",
       "patientTypePrivate": "ส่วนตัว",
       "phone": "เบอร์",
-      "placeOfBirth": "เกิดที่",
       "primaryDiagnosis": "การวินิจฉัยเบื้องต้น",
       "referredBy": "อ้างอิงจาก",
       "referredDate": "วันที่ที่ระบุ",
@@ -1346,7 +1345,9 @@
       "sexNotEntered": "ไม่ได้ระบุเพศ",
       "sources": "แหล่งที่มา",
       "status": "สถานะผู้ป่วย",
-      "totalMontlyExpense": "ค่าใช้จ่ายรายเดือน"
+      "totalMontlyExpense": "ค่าใช้จ่ายรายเดือน",
+      "nationality": "สัญชาติ",
+      "healthCareScheme": "สิทธิ์การรักษา"
     },
     "messages": {
       "areYouSureDelete": "คุณแน่ใจหรือไม่ว่าต้องการนำออก {object} นี้?",
