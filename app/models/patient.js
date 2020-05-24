@@ -51,8 +51,11 @@ export default AbstractModel.extend(DOBDays, PatientName, {
   socialActionTaken: DS.attr('string'),
   socialRecommendation: DS.attr('string'),
   status: DS.attr('string'),
+  // Extra fields
+  nationality: DS.attr('string'),
+  healthCareScheme: DS.attr('string'),
   // Associations
-  allergies: DS.hasMany('allergy', { async: true }),
+  allergies: DS.hasMany('allergy', { async: false }),
   diagnoses: DS.hasMany('diagnosis', { async: false }),
   operationReports: DS.hasMany('operation-report', { async: true }),
   operativePlans: DS.hasMany('operative-plan', { async: true }),
@@ -107,6 +110,12 @@ export default AbstractModel.extend(DOBDays, PatientName, {
       presence: true
     },
     lastName: {
+      presence: true
+    },
+    nationality: {
+      presence: true
+    },
+    healthCareScheme: {
       presence: true
     }
   }

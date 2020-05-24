@@ -110,7 +110,14 @@
                   <label class="control-label">{{t 'labels.age'}}</label>
                   <p class="form-control-static">{{model.age}}</p>
                 </div>
-                {{form.input property="placeOfBirth" label=(t 'patients.labels.placeOfBirth') class="form-input-group"}}
+                {{form.input property="nationality" label=(t 'patients.labels.nationality') class="form-input-group required"}}
+                {{form.select
+                  prompt=" "
+                  label=(t 'patients.labels.healthCareScheme')
+                  property="healthCareScheme"
+                  content=HealthcareSchemes
+                  class="form-input-group required"
+                }}
                 {{form.input property="occupation" label=(t 'patients.labels.occupation')  class="form-input-group"}}
                 <div class="form-input-group">
                   <label>{{t 'patients.labels.patientType'}}</label>

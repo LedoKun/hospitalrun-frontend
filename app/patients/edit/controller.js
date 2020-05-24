@@ -19,8 +19,10 @@ import SelectValues from 'hospitalrun/utils/select-values';
 import UserSession from 'hospitalrun/mixins/user-session';
 import VisitStatus from 'hospitalrun/utils/visit-statuses';
 import PatientVisits from 'hospitalrun/mixins/patient-visits';
+// 028 extras
+import HealthcareSchemes from 'hospitalrun/mixins/healthcare-schemes';
 
-export default AbstractEditController.extend(AllergyActions, BloodTypes, DiagnosisActions, ReturnTo, UserSession, PatientId, PatientNotes, PatientVisits, {
+export default AbstractEditController.extend(AllergyActions, BloodTypes, DiagnosisActions, ReturnTo, UserSession, PatientId, PatientNotes, PatientVisits, HealthcareSchemes, {
 
   canAddAppointment: computed(function() {
     return this.currentUserCan('add_appointment');
