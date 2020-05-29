@@ -110,7 +110,7 @@
                   <label class="control-label">{{t 'labels.age'}}</label>
                   <p class="form-control-static">{{model.age}}</p>
                 </div>
-                {{form.input property="nationality" label=(t 'patients.labels.nationality') class="form-input-group required"}}
+                {{select-or-typeahead form=form model=model property="nationality" label=(t 'patients.labels.nationality')  class="form-input-group required" list=nationalityList selection=model.nationality}}
                 {{form.select
                   prompt=" "
                   label=(t 'patients.labels.healthCareScheme')

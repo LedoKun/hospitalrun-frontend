@@ -143,7 +143,8 @@
       "visitLocationList": "ไปที่สถานที่",
       "visitTypes": "ไปที่ประเภท",
       "wardPricingTypes": "ประเภทราคาวอร์ด",
-      "warehouseList": "พื้นที่โฆษณา"
+      "warehouseList": "พื้นที่โฆษณา",
+      "nationalities": "สัญชาติ"
     },
     "lookupLists": "ค้นหารายการ",
     "roles": {
@@ -872,6 +873,7 @@
     "datePaid": "วันที่ที่ชำระเงิน",
     "dateRequested": "วันที่ที่ร้องขอ",
     "ลบ ": " ลบ ",
+    "delete": " ลบ ",
     "deleteRequest": "ลบคำขอ",
     "deleteUser": "ลบผู้ใช้",
     "department": "แผนก",

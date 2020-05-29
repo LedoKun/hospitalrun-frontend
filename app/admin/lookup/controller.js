@@ -188,6 +188,12 @@ export default Controller.extend(BillingCategories, EKMixin,
         models: {
           pricing: 'pricingType'
         }
+      }, {
+        name: this.get('intl').t('admin.lookup.nationalities'),
+        value: 'nationality_list',
+        model: {
+          patient: 'nationalityList'
+        }
       }];
     }),
 

@@ -123,6 +123,9 @@ export default AbstractEditController.extend(AllergyActions, BloodTypes, Diagnos
   sexList: alias('patientController.sexList'),
   statusList: alias('patientController.statusList'),
 
+  // 028 extra lookup lists
+  nationalityList: alias('patientController.nationalityList'),
+
   haveAdditionalContacts: computed('model.additionalContacts', function() {
     let additionalContacts = this.get('model.additionalContacts');
     return !isEmpty(additionalContacts);
@@ -149,6 +152,11 @@ export default AbstractEditController.extend(AllergyActions, BloodTypes, Diagnos
     name: 'statusList',
     property: 'model.status',
     id: 'patient_status_list'
+  }, {
+    // 028 extra field
+    name: 'nationalityList',
+    property: 'model.nationality',
+    id: 'nationality_list'
   }],
 
   patientImaging: computed('model.visits.[].imaging', function() {
