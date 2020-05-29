@@ -1,4 +1,4 @@
-FROM node:6-alpine
+FROM node:10-alpine
 
 # install script dependencies
 RUN apk update && apk add \
